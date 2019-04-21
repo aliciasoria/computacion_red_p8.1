@@ -1,0 +1,20 @@
+<h1> Lista de Quizzes </h1>
+<div style="overflow-x:auto;">
+  <table>
+    <!-- quizzes se entiende como lo que le pasas desde la
+    funcion del quiz_controller .index -->
+    <% for (var i in quizzes){%>
+      <% var quiz = quizzes[i]; %>
+      <tr>
+        <td><a href="/quizzes/<%= quiz.id %>/play"> <%= quiz.question %></a></td>
+        <td><a href="/quizzes/<%= quiz.id %>"><button>Show</button> </a></td>
+        <td><a href="/quizzes/<%= quiz.id %>/edit"><button>Edit</button> </a></td>
+        <td><a href="/quizzes/<%= quiz.id %>?_method=DELETE" onClick="return confirm('U sure?');"><button>Delete</button> </a></td>
+
+  </tr>
+
+    <% } %>
+  </table>
+  </br>
+  <a href="/quizzes/new"><button type = "button">Create New Quiz</button> </a></td>
+</div>

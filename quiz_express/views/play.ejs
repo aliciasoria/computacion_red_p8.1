@@ -1,0 +1,8 @@
+<h1>A jugar el quiz número <%= quiz.id %> </h1>
+
+<form method="get" action="/quizzes/<%=quiz.id%>/check">
+
+  <p> <%= quiz.question %> </p>
+  <p><input name="answer" placeholder="Answer" autocomplete="off" /></p>
+  <p><input class="sub" type="submit" value="Check" /></p>
+</form>

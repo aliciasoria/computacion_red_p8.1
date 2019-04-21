@@ -1,0 +1,9 @@
+<h1> Modifica el quiz <%= quiz.id %> </h1>
+<form method="post" action="/quizzes/<%= quiz.id %>?_method=PUT">
+  <p>Question</p>
+  <input name="question" value="<%= quiz.question %>" />
+</br>
+  <p>Answer</p>
+  <input name="answer" value="<%= quiz.answer %>" />
+</br>
+  <input class="sub" type="submit" value="Send">

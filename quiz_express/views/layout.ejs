@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <meta charset = "utf-8">
+    <title>Alyss' Quiz</title>
+    <link rel="icon" href="images/myAvatar.png" type="image/png"/>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+
+  <body >
+<div class="content" style="overflow-x:auto">
+
+<header>
+<h2> Alyss' Quiz</h2>
+</header>
+<nav>
+  <a href="/init"><button>Index</button><a/>
+  <a href="/credits"><button>Credits</button></a>
+  <a href="/quizzes"><button>Quizzes</button></a>
+  <a href="/quizzes/random_play"><button>Play All</button></a>
+
+
+</nav>
+
+<div>
+<%- body %>
+</div>
+
+<footer>
+  </br>
+<a href="https://www.elconfidencial.com/alma-corazon-vida/2015-03-07/que-fue-antes-el-huevo-o-la-gallina-esta-es-la-respuesta-definitiva_723664/"> La respuesta al universo</a></br></br>
+<script class="date">
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+var f=new Date();
+document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+</script></br>
+<a href= "http://www.upm.es/"><img src="/images/poli.png" width="30x30"/></a>
+<a href="http://www.etsit.upm.es/"><img src="/images/etsit.jpg" width="30x30"/></a>
+<a href="/" class="close"><button>Close session</button></a>
+
+</footer>
+
+</div>
+  </body>
+
+</html>

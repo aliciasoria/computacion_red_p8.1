@@ -1,0 +1,16 @@
+<h1>
+				Random! Solución:
+</h1>
+
+<p>
+				The	answer	<strong>	<%=	answer	%>	</strong>	is	<%=	result	?	'right'	:	'wrong'	%>.
+</p>
+<p>
+				<%	if	(!result)	{	%>
+				<p>You	have	failed</p></br>
+				<a	href="/quizzes"><button>End	of	Play</button></a>
+				<%	}	else	{	%>
+				<p>You	have	succeeded</p></br>
+				<a	href="/quizzes/random_play"><button>Continue	playing</button></a>
+				<%	}	%>
+</p>
