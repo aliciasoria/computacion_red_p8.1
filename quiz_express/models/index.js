@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const url = process.env.DATABASE_URL || "sqlite:quiz.sqlite";
 
 const options = {logging: false};
-const sequelize = new Sequelize("sqlite:quizzes.sqlite", options);
+const sequelize = new Sequelize(url, options);
 
 const Quiz = sequelize.define(  // define Quiz model (table quizzes)
     'quiz',
