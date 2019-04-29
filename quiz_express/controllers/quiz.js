@@ -77,7 +77,7 @@ exports.random_play=(req,res,next)=>{
   let ids =[];
   if(!req.session.randomPlay){req.session.randomPlay=[];}
   sequelize.models.quiz.findAll(  {where:{id:{[Op.notIn]:req.session.randomPlay}   } }  )
-  .then(quizzes=>{ quizzes.forsEach(quiz=>{ids.push(quiz.id);}); })
+  .then(quizzes=>{ quizzes.forEach(quiz=>{ids.push(quiz.id);}); })
   .then(()=>{ len = ids.length;  randomnum = Math.floor(Math.random()*len); randomid=ids[randomnum];  })
   .then(()=>{ sequelize.models.quiz.findByPk(randomid).then(quiz=>{res.render("random_play",{quiz});  })  })
 };
