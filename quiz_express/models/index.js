@@ -8,8 +8,11 @@ const sequelize = new Sequelize(url, options);
 const Quiz = sequelize.define(  // define Quiz model (table quizzes)
     'quiz',
     {
-        question: Sequelize.STRING,
-        answer: Sequelize.STRING
+        question: {DataTypes.STRING,
+        validate: {notEmpty: {msg: "Question must not be empty"}},
+
+        answer:{ DataTypes.STRING,
+          validate: {notEmpty: {msg: "Question must not be empty"}}
     }
 );
 
@@ -23,9 +26,9 @@ sequelize.sync() // Syncronize DB and seed if needed
                 {question: "Capital of Spain", answer: "Madrid"},
                 {question: "Capital of Portugal", answer: "Lisbon"}
             ])
-                .then(c => console.log(`DB filled with ${c.length} quizzes.`));
+                .then(c => console.log(`Quizzes filled with ${c.length} quizzes.`));
         } else {
-            console.log(`DB exists & has ${count} quizzes.`);
+            console.log(`Quizzes exists & has ${count} quizzes.`);
         }
     })
     .catch(console.log);

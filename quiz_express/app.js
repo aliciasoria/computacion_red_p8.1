@@ -1,26 +1,19 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var indexRouter = require('./routes/index');
-//MIS COSAS
+var session = require('express-session');
 var partials = require('express-partials');
 var methodOverride = require('method-override');
-var session = require('express-session');
-
+var indexRouter = require('./routes/index');
 
 var app = express();
 //MIS COSAS
 app.use(partials());
 app.use(methodOverride('_method',{methods:["POST","GET"]}));
-app.use(session({
-  secret:"whatever",
-  resave: true,
-  saveUninitialized: true
-}));
-//app.get('/',function(req,res){req.session.randomPlay;});
-
+app.use(session({secret:"whatever",resave: true,saveUninitialized: true}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
